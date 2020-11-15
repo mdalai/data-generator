@@ -1,3 +1,9 @@
+
+metadata/3p/
+metadata/metadatapkg/models/
+metadata/docs/
+metadata/test
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

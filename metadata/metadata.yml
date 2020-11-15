@@ -1,0 +1,87 @@
+openapi: 3.0.1
+info:
+  title: Machine Metadata generator
+  description: 'Machine metadata generator'
+  contact:
+    email: mingat.dalai@gmail.com
+  version: 1.0.0
+paths:
+  /foo:
+    get:
+      responses:
+        200:
+          description: successful operation
+          content: {}
+        400:
+          description: Invalid status value
+          content: {}
+components:
+  schemas:
+    Metadata:
+      type: object
+      properties:
+        metaid:
+          type: integer
+          format: int64
+        machineName:
+          type: string
+          description: Machine ID
+        ipaddr:
+          type: string
+          description: Machine IP address
+        software:
+          $ref: '#/components/schemas/Software'
+        hardware:
+          $ref: '#/components/schemas/Hardware'
+        createDate:
+          type: string
+          format: date-time
+      required:
+      - machineName
+      - software
+      - hardware
+    Software:
+      type: object
+      properties:
+        OS:
+          $ref: '#/components/schemas/OS'
+        packages:
+          type: array
+          items:
+            $ref: '#/components/schemas/Packages'
+          
+    Hardware:
+      type: object
+      properties:
+        cpu:
+          type: string
+        cpu_speed:
+          type: string
+          
+    OS:
+      type: object
+      properties:
+        name:
+          type: string
+          description: OS name
+        version:
+          type: string
+        kernel:
+          type: string
+      required:
+      - name
+      - version
+          
+    Packages:
+      type: object
+      properties:
+        package_name:
+          type: string
+        package_version:
+          type: string
+        install_date:
+          type: string
+          format: date-time
+      required:
+      - package_name
+      - package_version
