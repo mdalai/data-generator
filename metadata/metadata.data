@@ -1,0 +1,20 @@
+{
+    "metaid": 1, 
+    "machineName": "test machine 1",
+    "ipaddr": "192.168.1.2",
+    "software": {
+        "OS": {
+            "name": "Ubuntu",
+            "version": "20.04.1",
+            "kernel": "Linux 5.4.0-58-generic x86_64"
+        },
+        "package": [
+            {"package_name": "pkg1", "package_version": "1.1.0"},
+            {"package_name": "pkg2", "package_version": "1.1.2"}
+        ]
+    },
+    "hardware": {
+        "cpu": "Intel(R) Core(TM) i7-6500U CPU @ 2.50GHz",
+        "cpu_speed": "500.009"
+    }
+}

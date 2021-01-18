@@ -45,10 +45,10 @@ components:
       properties:
         OS:
           $ref: '#/components/schemas/OS'
-        packages:
+        package:
           type: array
           items:
-            $ref: '#/components/schemas/Packages'
+            $ref: '#/components/schemas/Package'
           
     Hardware:
       type: object
@@ -72,7 +72,7 @@ components:
       - name
       - version
           
-    Packages:
+    Package:
       type: object
       properties:
         package_name:
